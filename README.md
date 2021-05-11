@@ -14,7 +14,7 @@ NOTE: This project was developed and tested with an iPhone 11 Simulator (version
 ### Run the project
 
 Open two terminals.
-In the first terminal, go to the root folder of the project (/photo) and run:
+In the first terminal, go to the root folder of the project and run:
 
     npm start
 

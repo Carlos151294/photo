@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 import colors from '../config/colors';
 
-const TemplateScreen = ({ route }) => {
+const TemplateScreen = ({route}) => {
   const {name} = route;
 
   return (

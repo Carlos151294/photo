@@ -5,7 +5,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import {AppScreens} from './Screens';
-import BackButton, { styles } from '../components/BackButton';
+import BackButton, {styles} from '../components/BackButton';
 
 const Stack = createStackNavigator();
 

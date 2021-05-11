@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {
+  ActivityIndicator,
   Image,
   StyleSheet,
   Text,
@@ -12,9 +13,11 @@ import colors from '../../config/colors';
 import Button from '../../components/Button';
 import {getDesigns} from '../../services/designs';
 import {AppScreens} from '../../navigation/Screens';
+import Loader from '../../components/Loader';
 
 const HomeScreen = ({navigation}) => {
   const [designsList, setDesignsList] = useState({latest: [], all: []});
+  const [loading, setLoading] = useState(false);
 
   const handleLoadMore = async () => {
     try {
@@ -30,9 +33,12 @@ const HomeScreen = ({navigation}) => {
 
   const fetchDesigns = async () => {
     try {
+      setLoading(true);
       const data = await getDesigns(1);
       setDesignsList(data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -40,6 +46,8 @@ const HomeScreen = ({navigation}) => {
   useEffect(() => {
     fetchDesigns();
   }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <ScrollView style={styles.container}>

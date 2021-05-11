@@ -1,14 +1,14 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import { AppScreens } from './Screens';
+import {AppScreens} from './Screens';
 import DisplayScreen from '../screens/Home/DisplayScreen';
 import HomeTabs from './HomeTabs';
 import BackButton, {styles} from '../components/BackButton';
 import colors from '../config/colors';
 
 const displayScreenOptions = {
-  headerLeft: '',
+  headerLeft: null,
   headerRight: BackButton('close', colors.white),
   headerRightContainerStyle: styles.headerRightContainer,
   headerTransparent: true,

@@ -40,52 +40,55 @@ const designsPage1 = {
   all: [
     {
       uri: require('../assets/browse1.png'),
-      size: 'sm'
+      size: 'sm',
     },
     {
       uri: require('../assets/browse2.png'),
-      size: 'md'
+      size: 'md',
     },
     {
       uri: require('../assets/browse3.png'),
-      size: 'md'
+      size: 'md',
     },
     {
       uri: require('../assets/browse4.png'),
-      size: 'md'
+      size: 'md',
     },
     {
       uri: require('../assets/browse5.png'),
-      size: 'sm'
+      size: 'sm',
     },
     {
       uri: require('../assets/browse6.png'),
-      size: 'sm'
-    }
-  ]
+      size: 'sm',
+    },
+  ],
 };
 
 const designsPage2 = [
   {
     uri: require('../assets/browse7.png'),
-    size: 'md'
+    size: 'md',
   },
   {
     uri: require('../assets/browse8.png'),
-    size: 'md'
+    size: 'md',
   },
   {
     uri: require('../assets/browse9.png'),
-    size: 'md'
+    size: 'md',
   },
   {
     uri: require('../assets/browse10.png'),
-    size: 'sm'
+    size: 'sm',
   },
 ];
 
 export const getDesigns = (page) => {
   return new Promise((resolve) => {
-    setTimeout(() => page === 1 ? resolve(designsPage1) : resolve(designsPage2), 200)
+    setTimeout(
+      () => (page === 1 ? resolve(designsPage1) : resolve(designsPage2)),
+      1000,
+    );
   });
 };

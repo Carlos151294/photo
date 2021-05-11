@@ -26,7 +26,11 @@ const LoginScreen = () => {
           placeholder="Password"
           secureTextEntry
         />
-        <Button title="Log in" color="black" onPress={() => setUser({ email, password })} />
+        <Button
+          title="Log in"
+          color="black"
+          onPress={() => setUser({email, password})}
+        />
       </View>
     </View>
   );

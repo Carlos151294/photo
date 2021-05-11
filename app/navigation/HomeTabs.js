@@ -7,7 +7,6 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import {AppScreens} from './Screens';
 import TemplateScreen from '../screens/TemplateScreen';
 import NewDesignButton from '../components/NewDesignButton';
-import HomeNavigator from './AppNavigator';
 import HomeScreen from '../screens/Home/HomeScreen';
 
 const Tab = createBottomTabNavigator();

@@ -38,5 +38,5 @@ This will automatically open an iOS Simulator and you should be able to see the 
   This screen contains a Tab Navigation (Home, Search, New Design, Messages and Profile) with icons that allow the user to navigate through the app.
   When the screen is completely loaded, two main sections are displayed: *What's new today* and *Browse all*. First section allow the user to scroll left so he can see the latest designs available. The second section is a list of a variety of designs. In this screen, you can press on an image and a new Display Screen will show up.
 
-
+![Photo App](https://hnet.com/video-to-gif/viewimage/20210511-07-xWF53HfyTN6B8Jnu-XVYoP7-HNET)
 

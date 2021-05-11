@@ -1,7 +1,7 @@
 
 ### Installation
 
-Go to the root folder of the project (/photo). 
+Open a terminal. Go to the root folder of the project.  
 Install all the project dependencies:
 
     npm i
@@ -24,7 +24,7 @@ This command will compile the JavaScript Bundler of the project.
 When compilation is finished, go to the second terminal and execute:
 
     npm run ios
-    
+
 This will automatically open an iOS Simulator and you should be able to see the app running.
 
 

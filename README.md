@@ -1,8 +1,7 @@
 
 ### Installation
 
-Open a terminal. Go to the root folder of the project.  
-Install all the project dependencies:
+Open a terminal. Go to the root folder of the project. Install all the project dependencies:
 
     npm i
 

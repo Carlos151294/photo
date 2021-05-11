@@ -50,7 +50,9 @@ const HomeScreen = ({navigation}) => {
           {designsList.latest.map((image, index) => (
             <View key={image.id} style={styles.designRecord}>
               <TouchableWithoutFeedback
-                onPress={() => navigation.navigate(AppScreens.Display)}>
+                onPress={() =>
+                  navigation.navigate(AppScreens.Display, {uri: image.uri})
+                }>
                 <Image
                   source={image.uri}
                   style={styles.lg}
@@ -75,24 +77,35 @@ const HomeScreen = ({navigation}) => {
             {designsList.all
               .filter((image, index) => index % 2 === 0)
               .map(({uri, size}, index) => (
-                <Image
-                  key={index.toString()}
-                  style={size === 'sm' ? styles.smSize : styles.mdSize}
-                  resizeMode="cover"
-                  source={uri}
-                />
+                <TouchableWithoutFeedback
+                  key={index}
+                  onPress={() =>
+                    navigation.navigate(AppScreens.Display, {uri})
+                  }>
+                  <Image
+                    key={index.toString()}
+                    style={size === 'sm' ? styles.smSize : styles.mdSize}
+                    resizeMode="cover"
+                    source={uri}
+                  />
+                </TouchableWithoutFeedback>
               ))}
           </View>
           <View style={styles.browseRightColumn}>
             {designsList.all
               .filter((image, index) => index % 2 !== 0)
               .map(({uri, size}, index) => (
-                <Image
+                <TouchableWithoutFeedback
                   key={index}
-                  style={size === 'sm' ? styles.smSize : styles.mdSize}
-                  resizeMode="cover"
-                  source={uri}
-                />
+                  onPress={() =>
+                    navigation.navigate(AppScreens.Display, {uri})
+                  }>
+                  <Image
+                    style={size === 'sm' ? styles.smSize : styles.mdSize}
+                    resizeMode="cover"
+                    source={uri}
+                  />
+                </TouchableWithoutFeedback>
               ))}
           </View>
         </View>

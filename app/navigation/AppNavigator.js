@@ -1,60 +1,35 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/AntDesign';
-import IonIcon from 'react-native-vector-icons/Ionicons';
-import FeatherIcon from 'react-native-vector-icons/Feather';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import {AppScreens} from './Screens';
-import TemplateScreen from '../screens/TemplateScreen';
-import NewDesignButton from '../components/NewDesignButton';
-import HomeNavigator from './HomeNavigator';
+import { AppScreens } from './Screens';
+import DisplayScreen from '../screens/Home/DisplayScreen';
+import HomeTabs from './HomeTabs';
+import BackButton, {styles} from '../components/BackButton';
+import colors from '../config/colors';
 
-const Tab = createBottomTabNavigator();
-
-const AppNavigator = () => {
-  return (
-    <Tab.Navigator tabBarOptions={{showLabel: false}}>
-      <Tab.Screen
-        name={AppScreens.Home}
-        component={HomeNavigator}
-        options={{
-          tabBarIcon: () => <Icon name="home" size={22} />,
-        }}
-      />
-      <Tab.Screen
-        name={AppScreens.Search}
-        component={TemplateScreen}
-        options={{
-          tabBarIcon: () => <Icon name="search1" size={22} />,
-        }}
-      />
-      <Tab.Screen
-        name={AppScreens.NewDesign}
-        component={TemplateScreen}
-        options={({navigation}) => ({
-          tabBarButton: () => (
-            <NewDesignButton
-              onPress={() => navigation.navigate(AppScreens.NewDesign)}
-            />
-          ),
-        })}
-      />
-      <Tab.Screen
-        name={AppScreens.Messages}
-        component={TemplateScreen}
-        options={{
-          tabBarIcon: () => <FeatherIcon name="message-circle" size={22} />,
-        }}
-      />
-      <Tab.Screen
-        name={AppScreens.Profile}
-        component={TemplateScreen}
-        options={{
-          tabBarIcon: () => <IonIcon name="person-outline" size={22} />,
-        }}
-      />
-    </Tab.Navigator>
-  );
+const displayScreenOptions = {
+  headerLeft: '',
+  headerRight: BackButton('close', colors.white),
+  headerRightContainerStyle: styles.headerRightContainer,
+  headerTransparent: true,
+  title: null,
 };
 
-export default AppNavigator;
+const Stack = createStackNavigator();
+
+const HomeNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name={AppScreens.Home}
+      component={HomeTabs}
+      options={{headerShown: false}}
+    />
+    <Stack.Screen
+      name={AppScreens.Display}
+      component={DisplayScreen}
+      options={displayScreenOptions}
+    />
+  </Stack.Navigator>
+);
+
+export default HomeNavigator;

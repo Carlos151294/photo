@@ -9,8 +9,8 @@ import BackButton, { styles } from '../components/BackButton';
 
 const Stack = createStackNavigator();
 
-export const defaultOptions = {
-  headerLeft: BackButton,
+const defaultOptions = {
+  headerLeft: BackButton('back'),
   headerLeftContainerStyle: styles.headerLeftContainer,
   headerTransparent: true,
   title: null,

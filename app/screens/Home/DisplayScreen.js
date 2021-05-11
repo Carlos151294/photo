@@ -1,36 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet} from 'react-native';
 
-import colors from '../../config/colors';
-
-const DisplayScreen = () => {
+const DisplayScreen = ({ route }) => {
+  const image = route.params.uri;
+  console.log(image);
   return (
-    <View style={styles.container}>
-      <View style={styles.safearea}>
-        <Text style={styles.text}>Display</Text>
-      </View>
-    </View>
+    <ImageBackground
+      source={image}
+      style={styles.container}
+    />
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 80,
-    backgroundColor: colors.white,
-  },
-  safearea: {
-    flex: 1,
-    paddingTop: 35,
-    paddingHorizontal: 15,
-    paddingBottom: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 36,
-    fontFamily: 'Comfortaa-Light',
-    fontWeight: '400',
   },
 });
 

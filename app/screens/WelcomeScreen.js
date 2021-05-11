@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     flex: 6,
     justifyContent: 'center',
     alignItems: 'center',
-    resizeMode: 'repeat',
   },
   actionsContainer: {
     flex: 1,

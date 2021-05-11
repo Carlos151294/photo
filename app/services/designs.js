@@ -86,6 +86,6 @@ const designsPage2 = [
 
 export const getDesigns = (page) => {
   return new Promise((resolve) => {
-    setTimeout(() => page === 1 ? resolve(designsPage1) : resolve(designsPage2), 2000)
+    setTimeout(() => page === 1 ? resolve(designsPage1) : resolve(designsPage2), 200)
   });
 };
